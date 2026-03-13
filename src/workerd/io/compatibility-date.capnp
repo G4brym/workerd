@@ -1502,4 +1502,11 @@ struct CompatibilityFlags @0x8f8c1b68151b6cef {
   # When paired with `enable_version_api`, also exposes `ctx.version.metadata`. This is a separate
   # flag as we haven't decided on the exact behaviour of `ctx.version.metadata`, but the rest of
   # `ctx.version` is much more well defined. The behaviour of this flag will change in the future.
+
+  aiBindingExperimental @173 :Bool
+      $compatEnableFlag("ai_binding_experimental")
+      $experimental;
+  # When enabled, the AI binding's autorag() and gateway() methods route
+  # through JS RPC instead of HTTP fetch, delegating to the upstream
+  # service's RPC methods directly.
 }

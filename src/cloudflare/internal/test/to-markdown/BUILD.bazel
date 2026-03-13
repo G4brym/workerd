@@ -7,6 +7,12 @@ wd_test(
     data = glob(["*.js"]),
 )
 
+wd_test(
+    src = "to-markdown-api-rpc-test.wd-test",
+    args = ["--experimental"],
+    data = glob(["*.js"]),
+)
+
 py_wd_test(
     size = "large",
     src = "python-to-markdown-api-test.wd-test",

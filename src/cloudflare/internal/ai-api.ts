@@ -13,10 +13,15 @@ import {
 
 type AiSearchService = object;
 
+const aiBindingExperimental =
+  !!Cloudflare.compatibilityFlags['ai_binding_experimental'];
+
 interface Fetcher {
   fetch: typeof fetch;
   aiSearch: () => AiSearchService;
   gateway: (gatewayId: string) => AiGateway;
+  autorag: (autoragId?: string) => AutoRAG;
+  toMarkdown: () => ToMarkdownService;
 }
 
 interface AiError {
@@ -407,7 +412,9 @@ export class Ai {
     files?: MarkdownDocument | MarkdownDocument[],
     options?: ConversionRequestOptions
   ): ToMarkdownService | Promise<ConversionResponse | ConversionResponse[]> {
-    const service = new ToMarkdownService(this.#fetcher);
+    const service = aiBindingExperimental
+      ? this.#fetcher.toMarkdown()
+      : new ToMarkdownService(this.#fetcher);
 
     if (arguments.length < 1 || !files) return service;
 
@@ -420,13 +427,16 @@ export class Ai {
   }
 
   gateway(gatewayId: string, options?: { beta?: boolean }): AiGateway {
-    if (options?.beta === true) {
+    if (aiBindingExperimental || options?.beta === true) {
       return this.#fetcher.gateway(gatewayId);
     }
     return new AiGateway(this.#fetcher, gatewayId);
   }
 
   autorag(autoragId?: string): AutoRAG {
+    if (aiBindingExperimental) {
+      return this.#fetcher.autorag(autoragId);
+    }
     return new AutoRAG(this.#fetcher, autoragId);
   }
 
