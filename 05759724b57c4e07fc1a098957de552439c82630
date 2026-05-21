@@ -1,0 +1,31 @@
+types/generated-snapshot/latest/index.ts
+  22baa37600d6ebd1 14486
+types/defines/web-search.d.ts
+  22baa37600d6ebd1 10
+types/generated-snapshot/experimental/index.d.ts
+  22baa37600d6ebd1 15226
+types/generated-snapshot/latest/index.d.ts
+  22baa37600d6ebd1 14529
+types/generated-snapshot/experimental/index.ts
+  22baa37600d6ebd1 15183
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "05759724b57c4e07fc1a098957de552439c82630",
+  "prompts": {
+    "22baa37600d6ebd1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1c49c2946ffez7W6VFJaYSJQFu",
+        "model": "anthropic/claude-opus-4-7"
+      },
+      "human_author": "Gabriel Massadas",
+      "messages": [],
+      "total_additions": 5,
+      "total_deletions": 25,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
