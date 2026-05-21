@@ -1,0 +1,31 @@
+types/generated-snapshot/experimental/index.ts
+  22baa37600d6ebd1 15798,15819-15827,15847,15867,15871
+types/defines/web-search.d.ts
+  22baa37600d6ebd1 10,33-41,63,85,89
+types/generated-snapshot/latest/index.ts
+  22baa37600d6ebd1 15130,15151-15159,15179,15199,15203
+types/generated-snapshot/experimental/index.d.ts
+  22baa37600d6ebd1 15837,15858-15866,15886,15906,15910
+types/generated-snapshot/latest/index.d.ts
+  22baa37600d6ebd1 15169,15190-15198,15218,15238,15242
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "64e0c6a3356e9da2cf210b4c3de090bd591b736a",
+  "prompts": {
+    "22baa37600d6ebd1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1c49c2946ffez7W6VFJaYSJQFu",
+        "model": "anthropic/claude-opus-4-7"
+      },
+      "human_author": null,
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 65,
+      "overriden_lines": 0
+    }
+  }
+}
